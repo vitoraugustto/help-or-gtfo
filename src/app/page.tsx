@@ -6,14 +6,14 @@ import { useEffect, useState } from 'react';
 const oxanium = Oxanium({ subsets: ['latin'], weight: '800' });
 
 export default function Home() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const parallaxStyle = {
-    transform: `translate(-${position.x / 20}px, -${position.y / 20}px)`,
+    transform: `translate(-${mousePosition.x / 20}px, -${mousePosition.y / 20}px)`,
   };
 
   function handleMouseMove(e: MouseEvent) {
-    setPosition({ x: e.clientX, y: e.clientY });
+    setMousePosition({ x: e.clientX, y: e.clientY });
   }
 
   useEffect(() => {
