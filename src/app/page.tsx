@@ -1,15 +1,16 @@
 'use client';
 
-import { Oxanium } from 'next/font/google';
 import { useEffect, useState } from 'react';
 
-const oxanium = Oxanium({ subsets: ['latin'], weight: '800' });
+import { oxanium } from '@/common/constants';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const parallaxStyle = {
-    transform: `translate(-${mousePosition.x / 20}px, -${mousePosition.y / 20}px)`,
+    transform: `translate(-${mousePosition.x / 20}px, -${
+      mousePosition.y / 20
+    }px)`,
   };
 
   function handleMouseMove(e: MouseEvent) {
