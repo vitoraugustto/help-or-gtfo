@@ -1,8 +1,10 @@
 'use client';
 
+import { Oxanium } from 'next/font/google';
 import { useEffect, useState } from 'react';
 
-import { oxanium } from '@/common/constants';
+const oxanium = Oxanium({ subsets: ['latin'], weight: '800' });
+
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
