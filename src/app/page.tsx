@@ -28,12 +28,37 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <div style={parallaxStyle} className="flex flex-col gap-6">
-        <div className="flex flex-row">
-          <p className="text-5xl">help or</p>
-          <p className={`text-5xl ${oxanium.className}`}>&nbsp;&nbsp;GTFO</p>
+      <div style={parallaxStyle}>
+        <div className="flex max-w-sm flex-col gap-3">
+          <p>
+            Este é um site não oficial criado de fã para fãs. <br /> Por favor,
+            sinta-se à vontade para enviar dicas ou feedbacks relacionados à
+            premissa do site.
+            <br />
+            <br /> Todos os direitos de GTFO pertencem à desenvolvedora 10
+            Chambers.
+          </p>
+          <div className="flex flex-row justify-between">
+            <a
+              href="https://discordapp.com/users/259487137672462346"
+              target="_blank"
+            >
+              <Button color="white">Discord</Button>
+            </a>
+            <a
+              href="https://steamcommunity.com/id/Vitor_Augustto"
+              target="_blank"
+            >
+              <Button color="white">Steam</Button>
+            </a>
+            <a href="https://github.com/vitoraugustto" target="_blank">
+              <Button color="white">Github</Button>
+            </a>
+          </div>
+          <Button color="red" fullWidth>
+            Injetar
+          </Button>
         </div>
-        <Button color="red">Em desenvolvimento</Button>
       </div>
     </main>
   );
