@@ -31,3 +31,27 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.button-hover-red {
+  box-shadow: inset 0 0 0 0 rgb(255, 0, 0, 0.2);
+}
+
+.button-hover-red:hover {
+  box-shadow: inset 240px 0 0 0 rgb(255, 0, 0, 0.2);
+}
+
+.button-hover-yellow {
+  box-shadow: inset 0 0 0 0 rgb(255, 255, 0, 0.2);
+}
+
+.button-hover-yellow:hover {
+  box-shadow: inset 240px 0 0 0 rgb(255, 255, 0, 0.2);
+}
+
+.button-hover-slate {
+  box-shadow: inset 0 0 0 0 rgb(255, 255, 255, 0.2);
+}
+
+.button-hover-slate:hover {
+  box-shadow: inset 240px 0 0 0 rgb(255, 255, 255, 0.2);
+}
