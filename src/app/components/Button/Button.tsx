@@ -8,7 +8,7 @@ export function Button(props: {
     <button
       className={`${handleColor(
         color,
-      )} w-max max-w-[240px] cursor-pointer border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase `}
+      )} min-h-[48px] w-max max-w-[240px] cursor-pointer border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase `}
     >
       {children}
     </button>
