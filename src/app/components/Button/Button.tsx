@@ -7,8 +7,8 @@ export function Button(props: {
   const {
     fullWidth = false,
     className = '',
-    children,
     color = 'white',
+    children,
   } = props;
 
   return (
@@ -16,7 +16,8 @@ export function Button(props: {
       className={`${handleColor(color)} 
       ${className} 
       ${fullWidth && 'min-w-full'}
-      min-h-[48px] w-max max-w-[240px] border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase duration-200 ease-in`}
+      min-h-[48px]
+      w-max max-w-[240px] border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase duration-200 ease-in max-sm:px-2`}
     >
       {children}
     </button>
