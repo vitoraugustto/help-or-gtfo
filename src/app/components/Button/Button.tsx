@@ -8,7 +8,7 @@ export function Button(props: {
     <button
       className={`${handleColor(
         color,
-      )} min-h-[48px] w-max max-w-[240px] cursor-pointer border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase `}
+      )} min-h-[48px] w-max max-w-[240px] cursor-pointer border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase outline-none duration-200 ease-in`}
     >
       {children}
     </button>
@@ -18,13 +18,13 @@ export function Button(props: {
 function handleColor(color: ButtonColors) {
   switch (color) {
     case 'red':
-      return 'border-red-600 text-red-600';
+      return 'border-[red] text-[red] button-hover-red';
 
     case 'yellow':
-      return 'border-yellow-500 text-yellow-500';
+      return 'border-yellow-500 text-yellow-500 button-hover-yellow';
 
     default:
-      return 'border-slate-200 text-slate-200';
+      return 'border-slate-200 text-slate-200 button-hover-slate';
   }
 }
 
