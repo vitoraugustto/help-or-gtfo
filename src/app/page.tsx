@@ -5,8 +5,6 @@ import { useEffect, useState } from 'react';
 
 import { Button } from './components';
 
-const oxanium = Oxanium({ subsets: ['latin'], weight: '800' });
-
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -39,21 +37,11 @@ export default function Home() {
             Chambers.
           </p>
           <div className="flex flex-row justify-between">
-            <a
-              href="https://discordapp.com/users/259487137672462346"
-              target="_blank"
-            >
-              <Button color="white">Discord</Button>
-            </a>
-            <a
-              href="https://steamcommunity.com/id/Vitor_Augustto"
-              target="_blank"
-            >
-              <Button color="white">Steam</Button>
-            </a>
-            <a href="https://github.com/vitoraugustto" target="_blank">
-              <Button color="white">Github</Button>
-            </a>
+            {PLATFORMS.map((platform) => (
+              <a href={platform.link} target="_blank">
+                <Button color="white">{platform.name}</Button>
+              </a>
+            ))}
           </div>
           <Button color="red" fullWidth>
             Injetar
@@ -63,3 +51,18 @@ export default function Home() {
     </main>
   );
 }
+
+const PLATFORMS: { link: string; name: string }[] = [
+  {
+    link: 'https://discordapp.com/users/259487137672462346',
+    name: 'Discord',
+  },
+  {
+    link: 'https://steamcommunity.com/id/Vitor_Augustto',
+    name: 'Steam',
+  },
+  {
+    link: 'https://github.com/vitoraugustto',
+    name: 'Github',
+  },
+];
