@@ -1,8 +1,10 @@
 'use client';
 
-import { Oxanium } from 'next/font/google';
 import { useEffect, useState } from 'react';
 
+import DiscordLogo from '../../public/icons/discord-logo.svg';
+import GithubLogo from '../../public/icons/github-logo.svg';
+import SteamLogo from '../../public/icons/steam-logo.svg';
 import { Button } from './components';
 
 export default function Home() {
@@ -27,7 +29,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <div style={parallaxStyle}>
-        <div className="flex max-w-sm flex-col gap-3">
+        <div className="flex max-w-sm flex-col gap-3 px-4 sm:max-w-lg">
           <p>
             Este é um site não oficial criado de fã para fãs. <br /> Por favor,
             sinta-se à vontade para enviar dicas ou feedbacks relacionados à
@@ -37,9 +39,18 @@ export default function Home() {
             Chambers.
           </p>
           <div className="flex flex-row justify-between">
-            {PLATFORMS.map((platform) => (
-              <a href={platform.link} target="_blank">
-                <Button color="white">{platform.name}</Button>
+            {PLATFORMS.map(({ link, name, SVG }) => (
+              <a href={link} target="_blank">
+                <Button color="white">
+                  <div className="flex flex-row gap-2">
+                    <SVG
+                      height="24px"
+                      width="24px"
+                      className="fill-slate-200"
+                    />
+                    {name}
+                  </div>
+                </Button>
               </a>
             ))}
           </div>
@@ -52,16 +63,23 @@ export default function Home() {
   );
 }
 
-const PLATFORMS: { link: string; name: string }[] = [
+const PLATFORMS: {
+  SVG: React.FC<React.SVGProps<SVGSVGElement>>;
+  link: string;
+  name: string;
+}[] = [
   {
+    SVG: DiscordLogo,
     link: 'https://discordapp.com/users/259487137672462346',
     name: 'Discord',
   },
   {
+    SVG: SteamLogo,
     link: 'https://steamcommunity.com/id/Vitor_Augustto',
     name: 'Steam',
   },
   {
+    SVG: GithubLogo,
     link: 'https://github.com/vitoraugustto',
     name: 'Github',
   },
