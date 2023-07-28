@@ -1,14 +1,22 @@
 export function Button(props: {
+  fullWidth?: boolean;
+  className?: string;
   color?: ButtonColors;
   children: React.ReactElement | React.ReactElement[] | string;
 }) {
-  const { children, color = 'white' } = props;
+  const {
+    fullWidth = false,
+    className = '',
+    children,
+    color = 'white',
+  } = props;
 
   return (
     <button
-      className={`${handleColor(
-        color,
-      )} min-h-[48px] w-max max-w-[240px] cursor-pointer border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase outline-none duration-200 ease-in`}
+      className={`${handleColor(color)} 
+      ${className} 
+      ${fullWidth && 'min-w-full'}
+      min-h-[48px] w-max max-w-[240px] border-b-2 border-l-8 border-r-2 border-t-2 bg-black bg-opacity-30 px-6 py-2 uppercase outline-none duration-200 ease-in`}
     >
       {children}
     </button>
