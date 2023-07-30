@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import DiscordLogo from '../../public/icons/discord-logo.svg';
 import GithubLogo from '../../public/icons/github-logo.svg';
 import SteamLogo from '../../public/icons/steam-logo.svg';
+import { DISCORD_LINK, GITHUB_LINK, STEAM_LINK } from './common/constants';
 import { Button } from './components';
 
 export default function Home() {
@@ -70,17 +71,17 @@ const PLATFORMS: {
 }[] = [
   {
     SVG: DiscordLogo,
-    link: 'https://discordapp.com/users/259487137672462346',
+    link: DISCORD_LINK,
     name: 'Discord',
   },
   {
     SVG: SteamLogo,
-    link: 'https://steamcommunity.com/id/Vitor_Augustto',
+    link: STEAM_LINK,
     name: 'Steam',
   },
   {
     SVG: GithubLogo,
-    link: 'https://github.com/vitoraugustto',
+    link: GITHUB_LINK,
     name: 'Github',
   },
 ];
