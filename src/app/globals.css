@@ -32,26 +32,35 @@ body {
   box-sizing: border-box;
 }
 
-.button-hover-red {
-  box-shadow: inset 0 0 0 0 rgb(255, 0, 0, 0.2);
+.slide-button span {
+  position: relative;
+  z-index: 2;
 }
 
-.button-hover-red:hover {
-  box-shadow: inset 240px 0 0 0 rgb(255, 0, 0, 0.2);
+.slide-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
 }
 
-.button-hover-yellow {
-  box-shadow: inset 0 0 0 0 rgb(255, 255, 0, 0.2);
+.slide-button-red::before {
+  background-color: rgb(255, 0, 0, 0.2);
 }
 
-.button-hover-yellow:hover {
-  box-shadow: inset 240px 0 0 0 rgb(255, 255, 0, 0.2);
+.slide-button-yellow::before {
+  background-color: rgb(255, 255, 0, 0.2);
 }
 
-.button-hover-slate {
-  box-shadow: inset 0 0 0 0 rgb(255, 255, 255, 0.2);
+.slide-button-slate::before {
+  background-color: rgb(255, 255, 255, 0.2);
 }
 
-.button-hover-slate:hover {
-  box-shadow: inset 240px 0 0 0 rgb(255, 255, 255, 0.2);
+.slide-button-slate:hover::before,
+.slide-button-yellow:hover::before,
+.slide-button-red:hover::before {
+  width: 100%;
 }
