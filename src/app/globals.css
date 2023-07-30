@@ -32,35 +32,37 @@ body {
   box-sizing: border-box;
 }
 
-.slide-button span {
-  position: relative;
-  z-index: 2;
-}
+@media (min-width: 640px) {
+  .slide-button span {
+    position: relative;
+    z-index: 2;
+  }
 
-.slide-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  transition: width 0.5s ease;
-}
+  .slide-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: width 0.5s ease;
+  }
 
-.slide-button-red::before {
-  background-color: rgb(255, 0, 0, 0.2);
-}
+  .slide-button-red::before {
+    background-color: rgb(255, 0, 0, 0.2);
+  }
 
-.slide-button-yellow::before {
-  background-color: rgb(255, 255, 0, 0.2);
-}
+  .slide-button-yellow::before {
+    background-color: rgb(255, 255, 0, 0.2);
+  }
 
-.slide-button-slate::before {
-  background-color: rgb(255, 255, 255, 0.2);
-}
+  .slide-button-slate::before {
+    background-color: rgb(255, 255, 255, 0.2);
+  }
 
-.slide-button-slate:hover::before,
-.slide-button-yellow:hover::before,
-.slide-button-red:hover::before {
-  width: 100%;
+  .slide-button-slate:hover::before,
+  .slide-button-yellow:hover::before,
+  .slide-button-red:hover::before {
+    width: 100%;
+  }
 }
