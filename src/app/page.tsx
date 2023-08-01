@@ -41,7 +41,7 @@ export default function Home() {
           </p>
           <div className="flex flex-row justify-between">
             {PLATFORMS.map(({ link, name, SVG }) => (
-              <a href={link} target="_blank">
+              <a href={link} key={name} target="_blank">
                 <Button color="white">
                   <div className="flex flex-row gap-2">
                     <SVG
