@@ -8,7 +8,7 @@ import SteamLogo from '../public/icons/steam-logo.svg';
 import { DISCORD_LINK, GITHUB_LINK, STEAM_LINK } from './common/constants';
 import { Button } from './components';
 
-export default function Home() {
+export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const parallaxStyle = {
