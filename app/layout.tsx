@@ -17,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={shareTechMono.className}>{children}</body>
+      <body className={`flex min-h-screen ${shareTechMono.className}`}>
+        {children}
+      </body>
     </html>
   );
 }
+
+//
