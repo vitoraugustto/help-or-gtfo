@@ -4,7 +4,7 @@ import { Button } from '../components';
 
 export default function Platform() {
   return (
-    <Link href="/platform/notice">
+    <Link href="/complex/notice">
       <Button color="red" className="w-56">
         Injetar
       </Button>

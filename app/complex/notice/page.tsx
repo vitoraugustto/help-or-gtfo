@@ -28,7 +28,7 @@ export default function Notice() {
           </a>
         ))}
       </div>
-      <Link href="/platform/home">
+      <Link href="/complex/home">
         <Button color="red" fullWidth>
           Ok
         </Button>
