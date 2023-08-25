@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function HomeLayout({
+export default function ComplexLayout({
   children,
 }: {
   children: React.ReactNode;
