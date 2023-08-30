@@ -1,4 +1,4 @@
-interface IRundown {
+export interface IRundown {
   title: string;
   id: number;
   number: number;
@@ -6,7 +6,7 @@ interface IRundown {
   expeditions: IExpedition[];
 }
 
-interface IExpedition {
+export interface IExpedition {
   id: number;
   title: string;
   tier: 'A' | 'B' | 'C' | 'D' | 'E';
