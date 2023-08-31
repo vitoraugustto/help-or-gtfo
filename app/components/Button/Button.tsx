@@ -2,7 +2,7 @@ export function Button(props: {
   fullWidth?: boolean;
   className?: string;
   color?: ButtonColors;
-  children: React.ReactElement | React.ReactElement[] | string;
+  children: React.ReactElement | React.ReactElement[] | string | string[];
 }) {
   const {
     fullWidth = false,
