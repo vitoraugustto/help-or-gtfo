@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { IRundown } from '@/app/common/types';
@@ -27,11 +28,17 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4">
               {rundown.expeditions.map((expedition) => (
-                <Button key={expedition.id}>
-                  R{String(rundown.number)}
-                  {expedition.tier}
-                  {expedition.difficulty}
-                </Button>
+                <Link
+                  href={`/complex/rundowns/${rundown.title.toLowerCase()}/${expedition.tier.toLowerCase()}${
+                    expedition.difficulty
+                  }`}
+                >
+                  <Button key={expedition.id}>
+                    R{String(rundown.number)}
+                    {expedition.tier}
+                    {expedition.difficulty}
+                  </Button>
+                </Link>
               ))}
             </div>
           </div>
