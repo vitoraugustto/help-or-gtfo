@@ -29,11 +29,12 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               {rundown.expeditions.map((expedition) => (
                 <Link
+                  key={expedition.id}
                   href={`/complex/rundowns/${rundown.title.toLowerCase()}/${expedition.tier.toLowerCase()}${
                     expedition.difficulty
                   }`}
                 >
-                  <Button key={expedition.id}>
+                  <Button>
                     R{String(rundown.number)}
                     {expedition.tier}
                     {expedition.difficulty}
