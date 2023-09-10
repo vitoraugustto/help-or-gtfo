@@ -11,10 +11,16 @@ export const fetchRundowns = (): Promise<
   }>
 > => instance({ url: '/api/v1/rundowns' });
 
-export const fetchExpeditions = (): Promise<
+export const fetchExpedition = (
+  rundownId: IRundown['id'],
+  expeditionId: IExpedition['id'],
+): Promise<
   AxiosResponse<{
     status: 'error' | 'success';
     message: string;
-    payload: IExpedition[];
+    payload: IExpedition;
   }>
-> => instance({ url: '/api/v1/expediotions' });
+> =>
+  instance({
+    url: `/api/v1/rundowns/${rundownId}/expeditions/${expeditionId}`,
+  });
