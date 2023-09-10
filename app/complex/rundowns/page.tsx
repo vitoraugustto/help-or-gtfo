@@ -30,7 +30,12 @@ export default function Home() {
               {rundown.expeditions.map((expedition) => (
                 <Link
                   key={expedition.id}
-                  href={`/complex/rundowns/${rundown.title.toLowerCase()}/${expedition.tier.toLowerCase()}${
+                  href={`/complex/rundowns/${rundown.title
+                    .toLowerCase()
+                    .replace(
+                      ' ',
+                      '_',
+                    )}/expeditions/${expedition.tier.toLowerCase()}${
                     expedition.difficulty
                   }`}
                 >
