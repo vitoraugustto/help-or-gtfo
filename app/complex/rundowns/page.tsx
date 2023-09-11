@@ -30,14 +30,20 @@ export default function Home() {
               {rundown.expeditions.map((expedition) => (
                 <Link
                   key={expedition.id}
-                  href={`/complex/rundowns/${rundown.title
-                    .toLowerCase()
-                    .replace(
-                      ' ',
-                      '_',
-                    )}/expeditions/${expedition.tier.toLowerCase()}${
-                    expedition.difficulty
-                  }`}
+                  href={{
+                    pathname: `/complex/rundowns/${rundown.title
+                      .toLowerCase()
+                      .replace(
+                        ' ',
+                        '_',
+                      )}/expeditions/${expedition.tier.toLowerCase()}${
+                      expedition.difficulty
+                    }`,
+                    query: {
+                      rundownId: rundown.id,
+                      expeditionId: expedition.id,
+                    },
+                  }}
                 >
                   <Button>
                     R{String(rundown.number)}
