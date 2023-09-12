@@ -5,9 +5,9 @@ import { Button } from '@/app/components';
 import { fetchRundowns } from '@/app/services/rundowns';
 
 async function handleFetchRundowns() {
-  const res = await fetchRundowns();
+  const { payload } = await fetchRundowns();
 
-  return res.payload;
+  return payload;
 }
 
 export default async function Home() {
