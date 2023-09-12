@@ -1,24 +1,23 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 import { IRundown } from '@/app/common/types';
 import { Button } from '@/app/components';
 import { fetchRundowns } from '@/app/services/rundowns';
 
-export default function Home() {
-  const [rundowns, setRundowns] = useState<IRundown[]>([]);
+async function handleFetchRundowns() {
+  const res = await fetchRundowns();
 
-  useEffect(() => {
-    fetchRundowns().then((res) => setRundowns(res.data.payload));
-  }, []);
+  return res.payload;
+}
+
+export default async function Home() {
+  const rundowns: IRundown[] = await handleFetchRundowns();
 
   return (
     <div className="flex flex-col items-center">
       <p className="text-3xl">Rundowns</p>
       <div className="flex max-w-[600px] flex-col gap-4">
-        {rundowns?.map((rundown) => (
+        {rundowns.map((rundown) => (
           <div className="flex flex-col p-4" key={rundown.id}>
             <p className="font-bold">
               <span className="text-yellow-400">ALT://</span>RUNDOWN&nbsp;
@@ -31,18 +30,7 @@ export default function Home() {
                 <Link
                   key={expedition.id}
                   href={{
-                    pathname: `/complex/rundowns/${rundown.title
-                      .toLowerCase()
-                      .replace(
-                        ' ',
-                        '_',
-                      )}/expeditions/${expedition.tier.toLowerCase()}${
-                      expedition.difficulty
-                    }`,
-                    query: {
-                      rundownId: rundown.id,
-                      expeditionId: expedition.id,
-                    },
+                    pathname: `/complex/rundowns/${rundown.id}/expeditions/${expedition.id}`,
                   }}
                 >
                   <Button>
