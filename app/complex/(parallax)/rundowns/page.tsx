@@ -14,7 +14,7 @@ export default async function Home() {
   const rundowns: IRundown[] = await handleFetchRundowns();
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex w-full flex-col items-center">
       <p className="text-3xl">Rundowns</p>
       <div className="flex max-w-[600px] flex-col gap-4">
         {rundowns.map((rundown) => (
