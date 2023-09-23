@@ -8,8 +8,10 @@ export interface IRundown {
 
 export interface IExpedition {
   id: number;
-  title: string;
-  tier: 'A' | 'B' | 'C' | 'D' | 'E';
-  difficulty: '1' | '2' | '3' | '4' | 'X';
-  xp: number;
+  display_name: string;
+  title?: string;
+  tier?: 'A' | 'B' | 'C' | 'D' | 'E';
+  difficulty?: '1' | '2' | '3' | '4' | 'X';
+  xp?: number;
+  finishers?: [];
 }
