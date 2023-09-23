@@ -33,11 +33,7 @@ export default async function Home() {
                     pathname: `/complex/rundowns/${rundown.id}/expeditions/${expedition.id}`,
                   }}
                 >
-                  <Button>
-                    R{String(rundown.number)}
-                    {expedition.tier}
-                    {expedition.difficulty}
-                  </Button>
+                  <Button>{expedition.display_name}</Button>
                 </Link>
               ))}
             </div>
