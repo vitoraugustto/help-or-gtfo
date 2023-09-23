@@ -6,7 +6,7 @@ export const fetchRundowns = async (): Promise<{
   message: string;
   payload: IRundown[];
 }> => {
-  const res = await fetchApi('/api/v1/rundowns');
+  const res = await fetchApi('/api/v1/rundowns', { cache: 'reload' });
 
   return await res.json();
 };
