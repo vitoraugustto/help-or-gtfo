@@ -15,3 +15,12 @@ export interface IExpedition {
   xp?: number;
   finishers?: [];
 }
+
+export interface IPrisoner {
+  id: number;
+  username: string;
+  email?: string;
+  level: number;
+  xp: number;
+  completed_expeditions: IExpedition[];
+}
