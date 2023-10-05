@@ -12,24 +12,6 @@ async function getExpedition(
   return payload;
 }
 
-const SECTORS = [
-  {
-    src: '/images/sector-main.webp',
-    title: 'MAIN',
-    alt: 'Sector Main',
-  },
-  {
-    src: '/images/sector-secondary.webp',
-    title: 'SECONDARY',
-    alt: 'Sector Secondary',
-  },
-  {
-    src: '/images/sector-overload.webp',
-    title: 'OVERLOAD',
-    alt: 'Sector Overload',
-  },
-];
-
 export default async function Expedition({
   params,
 }: {
@@ -45,20 +27,43 @@ export default async function Expedition({
           {expedition.display_name} - {expedition.title}
         </p>
         <div className="flex flex-row gap-4">
-          {SECTORS.map((sector) => (
+          {expedition.main_sector && (
             <div className="flex h-16 w-16 items-center">
               <Image
-                src={sector.src}
-                alt={sector.alt}
+                src="/images/main-sector.webp"
+                alt="Main sector"
                 width={0}
                 height={0}
                 sizes="100vw"
                 className="h-auto w-full"
               />
             </div>
-          ))}
+          )}
+          {expedition.secondary_sector && (
+            <div className="flex h-16 w-16 items-center">
+              <Image
+                src="/images/secondary-sector.webp"
+                alt="Secondary sector"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-auto w-full"
+              />
+            </div>
+          )}
+          {expedition.overload_sector && (
+            <div className="flex h-16 w-16 items-center">
+              <Image
+                src="/images/overload-sector.webp"
+                alt="Overload sector"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-auto w-full"
+              />
+            </div>
+          )}
         </div>
-
         <p>Quantidade de XP por concluir: {expedition.xp}</p>
         <p>Prisioneiros que finalizaram a expedição:</p>
         {expedition.finishers?.map((prisoner) => (
