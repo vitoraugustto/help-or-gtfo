@@ -20,11 +20,15 @@ export default async function Expedition({
 
   return (
     <div>
-      <p className="text-2xl">
-        {expedition.title} - {expedition.tier}
-        {expedition.difficulty}
-      </p>
+      <p className="text-2xl">{expedition.display_name}</p>
       <p>Quantidade de XP por concluir: {expedition.xp}</p>
+      <p>Prisioneiros que finalizaram a expedição:</p>
+      {expedition.finishers?.map((prisoner) => (
+        <div className="flex flex-row">
+          <p>Level {prisoner.level} -&nbsp;</p>
+          <p>{prisoner.username}</p>
+        </div>
+      ))}
     </div>
   );
 }
