@@ -12,6 +12,9 @@ export interface IExpedition {
   title?: string;
   tier?: 'A' | 'B' | 'C' | 'D' | 'E';
   difficulty?: '1' | '2' | '3' | '4' | 'X';
+  main_sector: boolean;
+  secondary_sector: boolean;
+  overload_sector: boolean;
   xp?: number;
   finishers?: IPrisoner[];
 }
