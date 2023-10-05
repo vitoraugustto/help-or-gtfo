@@ -13,7 +13,7 @@ export interface IExpedition {
   tier?: 'A' | 'B' | 'C' | 'D' | 'E';
   difficulty?: '1' | '2' | '3' | '4' | 'X';
   xp?: number;
-  finishers?: [];
+  finishers?: IPrisoner[];
 }
 
 export interface IPrisoner {
