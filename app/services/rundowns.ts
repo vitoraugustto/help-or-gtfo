@@ -21,6 +21,7 @@ export const fetchExpedition = async (
 }> => {
   const res = await fetchApi(
     `/api/v1/rundowns/${rundownId}/expeditions/${expeditionId}`,
+    { cache: 'reload' },
   );
 
   return await res.json();
