@@ -12,11 +12,11 @@ export interface IExpedition {
   title?: string;
   tier?: 'A' | 'B' | 'C' | 'D' | 'E';
   difficulty?: '1' | '2' | '3' | '4' | 'X';
-  main_sector: boolean;
-  secondary_sector: boolean;
-  overload_sector: boolean;
+  main_sector?: boolean;
+  secondary_sector?: boolean;
+  overload_sector?: boolean;
   xp?: number;
-  finishers?: IPrisoner[];
+  finishers: IPrisoner[];
 }
 
 export interface IPrisoner {
@@ -25,5 +25,5 @@ export interface IPrisoner {
   email?: string;
   level: number;
   xp: number;
-  completed_expeditions: IExpedition[];
+  completed_expeditions?: IExpedition[];
 }
