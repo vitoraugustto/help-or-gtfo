@@ -1,13 +1,25 @@
 import Image from 'next/image';
 
 import { IExpedition, IRundown } from '@/app/common/types';
-import { fetchExpedition } from '@/app/services/rundowns';
+import {
+  fetchExpedition,
+  fetchExpeditionFinishers,
+} from '@/app/services/rundowns';
 
 async function getExpedition(
   rundownId: IRundown['id'],
   expeditionId: IExpedition['id'],
 ) {
   const { payload } = await fetchExpedition(rundownId, expeditionId);
+
+  return payload;
+}
+
+async function getExpeditionFinishers(
+  rundownId: IRundown['id'],
+  expeditionId: IExpedition['id'],
+) {
+  const { payload } = await fetchExpeditionFinishers(rundownId, expeditionId);
 
   return payload;
 }
@@ -19,6 +31,7 @@ export default async function Expedition({
 }) {
   const { rundownId, expeditionId } = params;
   const expedition = await getExpedition(rundownId, expeditionId);
+  const finishers = await getExpeditionFinishers(rundownId, expeditionId);
 
   return (
     <div className="flex w-full flex-col">
@@ -66,7 +79,7 @@ export default async function Expedition({
         </div>
         <p>Quantidade de XP por concluir: {expedition.xp}</p>
         <p>Prisioneiros que finalizaram a expedição:</p>
-        {expedition.finishers?.map((prisoner) => (
+        {finishers.map((prisoner) => (
           <div className="flex flex-row border-2 border-yellow-500 p-2 text-yellow-500">
             <p>Level {prisoner.level} -&nbsp;</p>
             <p>{prisoner.username}</p>
