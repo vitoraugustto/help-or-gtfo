@@ -25,3 +25,18 @@ export const fetchExpedition = async (
 
   return await res.json();
 };
+
+export const fetchExpeditionFinishers = async (
+  rundownId: IRundown['id'],
+  expeditionId: IExpedition['id'],
+): Promise<{
+  status: 'error' | 'success';
+  message: string;
+  payload: IExpedition['finishers'];
+}> => {
+  const res = await fetchApi(
+    `/api/v1/rundowns/${rundownId}/expeditions/${expeditionId}/finishers`,
+  );
+
+  return await res.json();
+};
