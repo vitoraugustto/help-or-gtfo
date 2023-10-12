@@ -34,8 +34,8 @@ export default async function Expedition({
   const finishers = await getExpeditionFinishers(rundownId, expeditionId);
 
   return (
-    <div className="flex w-full flex-col">
-      <div className="flex flex-col gap-4">
+    <div className="flex h-screen w-full flex-row items-center justify-center">
+      <div className="flex max-w-[750px] flex-1 flex-col gap-4 border-2 border-slate-800 p-6">
         <p className="text-4xl">
           {expedition.display_name} - {expedition.title}
         </p>
@@ -77,7 +77,7 @@ export default async function Expedition({
             </div>
           )}
         </div>
-        <p>Quantidade de XP por concluir: {expedition.xp}</p>
+        <p>Quantidade base de XP por concluir: {expedition.xp}</p>
         <p>Prisioneiros que finalizaram a expedição:</p>
         {finishers.map((prisoner) => (
           <div
