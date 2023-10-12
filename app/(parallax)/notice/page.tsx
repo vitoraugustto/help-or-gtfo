@@ -6,7 +6,7 @@ import DiscordLogo from '@/public/icons/discord-logo.svg';
 import GithubLogo from '@/public/icons/github-logo.svg';
 import SteamLogo from '@/public/icons/steam-logo.svg';
 
-export default function Notice() {
+export default function NoticeScreen() {
   return (
     <div className="flex h-screen w-full items-center justify-center">
       <div className="flex max-w-sm flex-col gap-3 px-0 sm:max-w-lg sm:px-4">
