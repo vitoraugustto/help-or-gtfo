@@ -9,7 +9,9 @@ export default function ComplexScreen() {
         <Link href="/complex/rundowns">
           <Button fullWidth>Rundowns</Button>
         </Link>
-        <Button fullWidth>Prisioneiros</Button>
+        <Link href="/complex/prisoners">
+          <Button fullWidth>Prisioneiros</Button>
+        </Link>
       </div>
     </div>
   );
