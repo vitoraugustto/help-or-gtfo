@@ -6,7 +6,7 @@ export const fetchPrisoners = async (): Promise<{
   message: string;
   payload: IPrisoner[];
 }> => {
-  const res = await fetchApi('/api/v1/prisoners');
+  const res = await fetchApi('/api/v1/prisoners?order_by=xp&sort_order=desc');
 
   return await res.json();
 };
