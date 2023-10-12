@@ -8,7 +8,7 @@ import SteamLogo from '@/public/icons/steam-logo.svg';
 
 export default function Notice() {
   return (
-    <div className="flex w-full items-center justify-center">
+    <div className="flex h-screen w-full items-center justify-center">
       <div className="flex max-w-sm flex-col gap-3 px-0 sm:max-w-lg sm:px-4">
         <p>
           Esta é uma plataforma não oficial criada de fã para fãs. <br /> Por
