@@ -26,7 +26,7 @@ export default function ParallaxLayout({
   }, []);
 
   return (
-    <div style={parallaxStyle} className="flex h-full w-full">
+    <div style={parallaxStyle} className="flex h-screen w-full">
       {children}
     </div>
   );
