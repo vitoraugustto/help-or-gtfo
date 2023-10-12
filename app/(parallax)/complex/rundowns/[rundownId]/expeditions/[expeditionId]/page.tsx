@@ -80,7 +80,10 @@ export default async function Expedition({
         <p>Quantidade de XP por concluir: {expedition.xp}</p>
         <p>Prisioneiros que finalizaram a expedição:</p>
         {finishers.map((prisoner) => (
-          <div className="flex flex-row border-2 border-yellow-500 p-2 text-yellow-500">
+          <div
+            key={prisoner.id}
+            className="flex flex-row border-2 border-yellow-500 p-2 text-yellow-500"
+          >
             <p>Level {prisoner.level} -&nbsp;</p>
             <p>{prisoner.username}</p>
           </div>
