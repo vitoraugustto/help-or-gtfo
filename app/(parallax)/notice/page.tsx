@@ -1,14 +1,10 @@
 import Link from 'next/link';
 
-import DiscordLogo from '../../../../public/icons/discord-logo.svg';
-import GithubLogo from '../../../../public/icons/github-logo.svg';
-import SteamLogo from '../../../../public/icons/steam-logo.svg';
-import {
-  DISCORD_LINK,
-  GITHUB_LINK,
-  STEAM_LINK,
-} from '../../../common/constants';
-import { Button } from '../../../components';
+import { DISCORD_LINK, GITHUB_LINK, STEAM_LINK } from '@/app/common/constants';
+import { Button } from '@/app/components';
+import DiscordLogo from '@/public/icons/discord-logo.svg';
+import GithubLogo from '@/public/icons/github-logo.svg';
+import SteamLogo from '@/public/icons/steam-logo.svg';
 
 export default function Notice() {
   return (
