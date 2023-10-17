@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { IPrisoner } from '@/app/common/types';
 import {
   fetchPrisoner,
@@ -32,16 +34,57 @@ export default async function PrisonerScreen({
       <p className="text-xl">{prisoner.username}</p>
       <p className="text-xl">Level: {prisoner.level}</p>
       <p className="text-xl">Experiência obtida: {prisoner.xp}</p>
-      <div className="flex flex-col gap-4">
+      <p className="text-xl">
+        Expedições concluídas: {completedExpeditions.length}
+      </p>
+      <div className="mt-4 flex h-96 w-[50%] flex-col gap-4 overflow-y-auto pr-4 max-sm:w-[90%]">
         {completedExpeditions.map((completedExpedition) => (
           <div
             key={completedExpedition.id}
-            className="flex max-w-[750px] flex-row border-2 border-yellow-500 p-2 text-yellow-500"
+            className="flex flex-row items-center justify-between border-2 border-slate-800 p-2"
           >
-            <p>
-              {completedExpedition.expedition.display_name} -{' '}
+            <p className="text-xl text-slate-200">
+              {completedExpedition.expedition.display_name}&nbsp;-&nbsp;
               {completedExpedition.expedition.title}
             </p>
+            <div className="flex flex-row gap-4">
+              {completedExpedition.expedition.main_sector && (
+                <div className="flex h-16 w-16 items-center">
+                  <Image
+                    src="/images/main-sector.webp"
+                    alt="Main sector"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+              )}
+              {completedExpedition.expedition.secondary_sector && (
+                <div className="flex h-16 w-16 items-center">
+                  <Image
+                    src="/images/secondary-sector.webp"
+                    alt="Secondary sector"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+              )}
+              {completedExpedition.expedition.overload_sector && (
+                <div className="flex h-16 w-16 items-center">
+                  <Image
+                    src="/images/overload-sector.webp"
+                    alt="Overload sector"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
