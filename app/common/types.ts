@@ -6,6 +6,16 @@ export interface IRundown {
   expeditions: IExpedition[];
 }
 
+export interface ICompletedExpeditions {
+  expedition: IExpedition;
+  id: number;
+  cleared_main_sector: boolean;
+  cleared_secondary_sector: boolean;
+  cleared_overload_sector: boolean;
+  prisoner_efficiency: boolean;
+  completed_at: string;
+}
+
 export interface IExpedition {
   id: number;
   display_name: string;
