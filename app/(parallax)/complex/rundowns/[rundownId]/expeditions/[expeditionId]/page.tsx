@@ -76,6 +76,18 @@ export default async function Expedition({
               />
             </div>
           )}
+          {expedition.overload_sector && (
+            <div className="flex h-16 w-16 items-center">
+              <Image
+                src="/images/prisoner-efficiency.webp"
+                alt="Prisoner efficiency"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-auto w-full"
+              />
+            </div>
+          )}
         </div>
         <p>Quantidade base de XP por concluir: {expedition.xp}</p>
         <p>Prisioneiros que finalizaram a expedição:</p>
