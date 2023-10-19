@@ -56,7 +56,9 @@ export default async function PrisonerScreen({
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="h-auto w-full"
+                    className={`h-auto w-full ${
+                      !completedExpedition.cleared_main_sector && 'opacity-20'
+                    }`}
                   />
                 </div>
               )}
@@ -68,7 +70,10 @@ export default async function PrisonerScreen({
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="h-auto w-full"
+                    className={`h-auto w-full ${
+                      !completedExpedition.cleared_secondary_sector &&
+                      'opacity-20'
+                    }`}
                   />
                 </div>
               )}
@@ -80,7 +85,24 @@ export default async function PrisonerScreen({
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="h-auto w-full"
+                    className={`h-auto w-full ${
+                      !completedExpedition.cleared_overload_sector &&
+                      'opacity-20'
+                    }`}
+                  />
+                </div>
+              )}
+              {completedExpedition.expedition.overload_sector && (
+                <div className="flex h-16 w-16 items-center">
+                  <Image
+                    src="/images/prisoner-efficiency.webp"
+                    alt="Prisoner efficiency"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className={`h-auto w-full ${
+                      !completedExpedition.prisoner_efficiency && 'opacity-20'
+                    }`}
                   />
                 </div>
               )}
