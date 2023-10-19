@@ -49,67 +49,60 @@ export default async function PrisonerScreen({
             </p>
             <div className="flex flex-row gap-4">
               {completedExpedition.expedition.main_sector && (
-                <div className="flex h-16 w-16 items-center">
-                  <Image
-                    src="/images/main-sector.webp"
-                    alt="Main sector"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className={`h-auto w-full ${
-                      !completedExpedition.cleared_main_sector && 'opacity-20'
-                    }`}
-                  />
-                </div>
+                <Sector
+                  src="/images/main-sector.webp"
+                  alt="Main sector"
+                  highlight={completedExpedition.cleared_main_sector}
+                />
               )}
               {completedExpedition.expedition.secondary_sector && (
-                <div className="flex h-16 w-16 items-center">
-                  <Image
-                    src="/images/secondary-sector.webp"
-                    alt="Secondary sector"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className={`h-auto w-full ${
-                      !completedExpedition.cleared_secondary_sector &&
-                      'opacity-20'
-                    }`}
-                  />
-                </div>
+                <Sector
+                  src="/images/secondary-sector.webp"
+                  alt="Secondary sector"
+                  highlight={completedExpedition.cleared_secondary_sector}
+                />
               )}
               {completedExpedition.expedition.overload_sector && (
-                <div className="flex h-16 w-16 items-center">
-                  <Image
-                    src="/images/overload-sector.webp"
-                    alt="Overload sector"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className={`h-auto w-full ${
-                      !completedExpedition.cleared_overload_sector &&
-                      'opacity-20'
-                    }`}
-                  />
-                </div>
+                <Sector
+                  src="/images/overload-sector.webp"
+                  alt="Overload sector"
+                  highlight={completedExpedition.cleared_overload_sector}
+                />
               )}
               {completedExpedition.expedition.overload_sector && (
-                <div className="flex h-16 w-16 items-center">
-                  <Image
-                    src="/images/prisoner-efficiency.webp"
-                    alt="Prisoner efficiency"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className={`h-auto w-full ${
-                      !completedExpedition.prisoner_efficiency && 'opacity-20'
-                    }`}
-                  />
-                </div>
+                <Sector
+                  src="/images/prisoner-efficiency.webp"
+                  alt="Prisoner efficiency"
+                  highlight={completedExpedition.prisoner_efficiency}
+                />
               )}
             </div>
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+function Sector({
+  src,
+  alt,
+  highlight,
+}: {
+  src: string;
+  alt: string;
+  highlight: boolean;
+}) {
+  return (
+    <div className="flex h-16 w-16 items-center">
+      <Image
+        src={src}
+        alt={alt}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className={`h-auto w-full ${!highlight && 'opacity-20'}`}
+      />
     </div>
   );
 }
