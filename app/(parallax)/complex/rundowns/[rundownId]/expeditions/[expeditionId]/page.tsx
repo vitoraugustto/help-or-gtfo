@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { IExpedition, IRundown } from '@/app/common/types';
 import {
@@ -92,13 +93,15 @@ export default async function Expedition({
         <p>Quantidade base de XP por concluir: {expedition.xp}</p>
         <p>Prisioneiros que finalizaram a expedição:</p>
         {finishers.map((prisoner) => (
-          <div
-            key={prisoner.id}
-            className="flex flex-row border-2 border-yellow-500 p-2 text-yellow-500"
-          >
-            <p>Level {prisoner.level} -&nbsp;</p>
-            <p>{prisoner.username}</p>
-          </div>
+          <Link href={`/complex/prisoners/${prisoner.id}`}>
+            <div
+              key={prisoner.id}
+              className="flex flex-row border-2 border-yellow-500 p-2 text-yellow-500"
+            >
+              <p>Level {prisoner.level} -&nbsp;</p>
+              <p>{prisoner.username}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
