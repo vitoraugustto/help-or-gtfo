@@ -1,6 +1,7 @@
 export const fetchApi = async (url: string, options?: RequestInit) => {
   const opt: RequestInit = {
     ...options,
+    cache: 'no-store',
     headers: { 'Content-Type': 'application/json' },
   };
 
