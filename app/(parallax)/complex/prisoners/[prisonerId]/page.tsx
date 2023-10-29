@@ -15,7 +15,7 @@ async function getPrisoner(id: IPrisoner['id']) {
 async function getPrisonerCompletedExpeditions(id: IPrisoner['id']) {
   const { payload } = await fetchPrisonerCompletedExpeditions(id);
 
-  return payload;
+  return payload.results;
 }
 
 export default async function PrisonerScreen({
