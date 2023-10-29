@@ -28,7 +28,12 @@ export const fetchPrisonerCompletedExpeditions = async (
 ): Promise<{
   status: 'error' | 'success';
   message: string;
-  payload: ICompletedExpeditions[];
+  payload: {
+    count: number;
+    next: string;
+    previous: string;
+    results: ICompletedExpeditions[]
+  }
 }> => {
   const res = await fetchApi(`/api/v1/prisoners/${id}/completed-expeditions`);
 
