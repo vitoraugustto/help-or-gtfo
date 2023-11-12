@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { IPrisoner } from '@/app/common/types';
 import {
   fetchPrisoner,
-  fetchPrisonerCompletedExpeditions,
+  fetchCompletedExpeditions,
 } from '@/app/services/prisoners';
 
 async function getPrisoner(id: IPrisoner['id']) {
@@ -12,8 +12,8 @@ async function getPrisoner(id: IPrisoner['id']) {
   return payload;
 }
 
-async function getPrisonerCompletedExpeditions(id: IPrisoner['id']) {
-  const { payload } = await fetchPrisonerCompletedExpeditions(id);
+async function handleFetchCompletedExpeditions(id: IPrisoner['id']) {
+  const { payload } = await fetchCompletedExpeditions(id);
 
   return payload.results;
 }
@@ -25,7 +25,7 @@ export default async function PrisonerScreen({
 }) {
   const { prisonerId } = params;
   const prisoner = await getPrisoner(prisonerId);
-  const completedExpeditions = await getPrisonerCompletedExpeditions(
+  const completedExpeditions = await handleFetchCompletedExpeditions(
     prisonerId,
   );
 

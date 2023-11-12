@@ -23,7 +23,7 @@ export const fetchPrisoner = async (
   return await res.json();
 };
 
-export const fetchPrisonerCompletedExpeditions = async (
+export const fetchCompletedExpeditions = async (
   id: IPrisoner['id'],
 ): Promise<{
   status: 'error' | 'success';
