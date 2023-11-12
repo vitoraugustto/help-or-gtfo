@@ -6,7 +6,7 @@ import {
   fetchCompletedExpeditions,
 } from '@/app/services/prisoners';
 
-async function getPrisoner(id: IPrisoner['id']) {
+async function handleFetchPrisoner(id: IPrisoner['id']) {
   const { payload } = await fetchPrisoner(id);
 
   return payload;
@@ -24,7 +24,7 @@ export default async function PrisonerScreen({
   params: { prisonerId: IPrisoner['id'] };
 }) {
   const { prisonerId } = params;
-  const prisoner = await getPrisoner(prisonerId);
+  const prisoner = await handleFetchPrisoner(prisonerId);
   const completedExpeditions = await handleFetchCompletedExpeditions(
     prisonerId,
   );
