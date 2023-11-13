@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { Button } from '@/app/components';
 import { fetchPrisoners } from '@/app/services/prisoners';
 
-async function getPrisoners() {
+async function handleFetchPrisoners() {
   const { payload } = await fetchPrisoners();
 
   return payload;
 }
 
 export default async function PrisonersScreen() {
-  const prisoners = await getPrisoners();
+  const prisoners = await handleFetchPrisoners();
 
   return (
     <div className="flex w-full flex-col items-center pt-8">
