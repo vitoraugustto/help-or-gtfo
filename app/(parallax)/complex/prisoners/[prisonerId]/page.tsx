@@ -50,28 +50,28 @@ export default async function PrisonerScreen({
             <div className="flex flex-row gap-4">
               {completedExpedition.expedition.main_sector && (
                 <Sector
-                  src="/images/main-sector.webp"
+                  src="/images/main-sector.png"
                   alt="Main sector"
                   highlight={completedExpedition.cleared_main_sector}
                 />
               )}
               {completedExpedition.expedition.secondary_sector && (
                 <Sector
-                  src="/images/secondary-sector.webp"
+                  src="/images/secondary-sector.png"
                   alt="Secondary sector"
                   highlight={completedExpedition.cleared_secondary_sector}
                 />
               )}
               {completedExpedition.expedition.overload_sector && (
                 <Sector
-                  src="/images/overload-sector.webp"
+                  src="/images/overload-sector.png"
                   alt="Overload sector"
                   highlight={completedExpedition.cleared_overload_sector}
                 />
               )}
               {completedExpedition.expedition.overload_sector && (
                 <Sector
-                  src="/images/prisoner-efficiency.webp"
+                  src="/images/prisoner-efficiency.png"
                   alt="Prisoner efficiency"
                   highlight={completedExpedition.prisoner_efficiency}
                 />

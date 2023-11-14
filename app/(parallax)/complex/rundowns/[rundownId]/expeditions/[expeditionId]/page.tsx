@@ -44,7 +44,7 @@ export default async function Expedition({
           {expedition.main_sector && (
             <div className="flex h-16 w-16 items-center">
               <Image
-                src="/images/main-sector.webp"
+                src="/images/main-sector.png"
                 alt="Main sector"
                 width={0}
                 height={0}
@@ -56,7 +56,7 @@ export default async function Expedition({
           {expedition.secondary_sector && (
             <div className="flex h-16 w-16 items-center">
               <Image
-                src="/images/secondary-sector.webp"
+                src="/images/secondary-sector.png"
                 alt="Secondary sector"
                 width={0}
                 height={0}
@@ -68,7 +68,7 @@ export default async function Expedition({
           {expedition.overload_sector && (
             <div className="flex h-16 w-16 items-center">
               <Image
-                src="/images/overload-sector.webp"
+                src="/images/overload-sector.png"
                 alt="Overload sector"
                 width={0}
                 height={0}
@@ -80,7 +80,7 @@ export default async function Expedition({
           {expedition.overload_sector && (
             <div className="flex h-16 w-16 items-center">
               <Image
-                src="/images/prisoner-efficiency.webp"
+                src="/images/prisoner-efficiency.png"
                 alt="Prisoner efficiency"
                 width={0}
                 height={0}
