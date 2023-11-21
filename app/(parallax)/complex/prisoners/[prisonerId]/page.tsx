@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 import { IPrisoner } from '@/app/common/types';
 import {
-  fetchPrisoner,
   fetchCompletedExpeditions,
+  fetchPrisoner,
 } from '@/app/services/prisoners';
 
 async function handleFetchPrisoner(id: IPrisoner['id']) {
