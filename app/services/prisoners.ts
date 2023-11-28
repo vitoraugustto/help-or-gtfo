@@ -24,7 +24,7 @@ export const fetchPrisoner = async (
 };
 
 export const fetchCompletedExpeditions = async (
-  id: IPrisoner['id'],
+  id: IPrisoner['id'], page: number
 ): Promise<{
   status: 'error' | 'success';
   message: string;
@@ -35,7 +35,7 @@ export const fetchCompletedExpeditions = async (
     results: ICompletedExpeditions[]
   }
 }> => {
-  const res = await fetchApi(`/api/v1/prisoners/${id}/completed-expeditions`);
+  const res = await fetchApi(`/api/v1/prisoners/${id}/completed-expeditions?page=${page}`);
 
   return await res.json();
 };
