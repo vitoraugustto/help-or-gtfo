@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import ReactPaginate from 'react-paginate';
 
 import { ICompletedExpeditions, IPrisoner } from '@/app/common/types';
 import { fetchCompletedExpeditions } from '@/app/services/prisoners';
@@ -12,6 +13,7 @@ export function CompletedExpeditions({
   prisonerId: IPrisoner['id'];
 }) {
   const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
   const [completedExpeditions, setCompletedExpeditions] = useState<{
     count: number;
     results: ICompletedExpeditions[];
@@ -21,6 +23,7 @@ export function CompletedExpeditions({
     async function handleFetchCompletedExpeditions() {
       const { payload } = await fetchCompletedExpeditions(prisonerId, page);
 
+      setTotalPage(payload.count);
       setCompletedExpeditions(payload);
     }
 
@@ -74,7 +77,12 @@ export function CompletedExpeditions({
             </div>
           </div>
         ))}
-      </div>{' '}
+      </div>
+      <ReactPaginate
+        className="mt-8 flex gap-4"
+        pageCount={totalPage / 5}
+        onPageChange={(p) => setPage(p.selected + 1)}
+      />
     </>
   );
 }
