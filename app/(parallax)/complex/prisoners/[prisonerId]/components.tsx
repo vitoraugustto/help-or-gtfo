@@ -79,7 +79,10 @@ export function CompletedExpeditions({
         ))}
       </div>
       <ReactPaginate
-        className="mt-8 flex gap-4"
+        activeClassName="text-red-500 text-2xl rounded-full"
+        previousLabel="<"
+        nextLabel=">"
+        className="mt-8 flex gap-6"
         pageCount={totalPage / 5}
         onPageChange={(p) => setPage(p.selected + 1)}
       />
