@@ -24,7 +24,7 @@ export const fetchPrisoner = async (
 };
 
 export const fetchCompletedExpeditions = async (
-  id: IPrisoner['id'], page: number
+  id: IPrisoner['id'], page: number = 1
 ): Promise<{
   status: 'error' | 'success';
   message: string;
