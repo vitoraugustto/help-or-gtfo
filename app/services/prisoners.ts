@@ -1,6 +1,7 @@
 import {
   ICompletedExpeditions,
   IExpedition,
+  IPaginationResponse,
   IPrisoner,
   ResponseStatus,
 } from '../common/types';
@@ -34,12 +35,7 @@ export const fetchCompletedExpeditions = async (
 ): Promise<{
   status: ResponseStatus;
   message: string;
-  payload: {
-    count: number;
-    next: string;
-    previous: string;
-    results: ICompletedExpeditions[];
-  };
+  payload: ICompletedExpeditionsResponse;
 }> => {
   const res = await fetchApi(
     `/api/v1/prisoners/${id}/completed-expeditions?page=${page}`,
@@ -47,3 +43,7 @@ export const fetchCompletedExpeditions = async (
 
   return await res.json();
 };
+
+interface ICompletedExpeditionsResponse extends IPaginationResponse {
+  results: ICompletedExpeditions[];
+}
