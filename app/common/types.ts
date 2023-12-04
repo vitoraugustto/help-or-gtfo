@@ -39,3 +39,9 @@ export interface IPrisoner {
 }
 
 export type ResponseStatus = 'error' | 'success';
+
+export interface IPaginationResponse {
+  count: number;
+  next: string;
+  previous: string;
+}
