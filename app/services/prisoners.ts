@@ -1,8 +1,13 @@
-import { ICompletedExpeditions, IExpedition, IPrisoner } from '../common/types';
+import {
+  ICompletedExpeditions,
+  IExpedition,
+  IPrisoner,
+  ResponseStatus,
+} from '../common/types';
 import { fetchApi } from './fetch';
 
 export const fetchPrisoners = async (): Promise<{
-  status: 'error' | 'success';
+  status: ResponseStatus;
   message: string;
   payload: IPrisoner[];
 }> => {
@@ -14,7 +19,7 @@ export const fetchPrisoners = async (): Promise<{
 export const fetchPrisoner = async (
   id: IPrisoner['id'],
 ): Promise<{
-  status: 'error' | 'success';
+  status: ResponseStatus;
   message: string;
   payload: IPrisoner;
 }> => {
@@ -24,18 +29,21 @@ export const fetchPrisoner = async (
 };
 
 export const fetchCompletedExpeditions = async (
-  id: IPrisoner['id'], page: number = 1
+  id: IPrisoner['id'],
+  page: number = 1,
 ): Promise<{
-  status: 'error' | 'success';
+  status: ResponseStatus;
   message: string;
   payload: {
     count: number;
     next: string;
     previous: string;
-    results: ICompletedExpeditions[]
-  }
+    results: ICompletedExpeditions[];
+  };
 }> => {
-  const res = await fetchApi(`/api/v1/prisoners/${id}/completed-expeditions?page=${page}`);
+  const res = await fetchApi(
+    `/api/v1/prisoners/${id}/completed-expeditions?page=${page}`,
+  );
 
   return await res.json();
 };
