@@ -38,4 +38,4 @@ export interface IPrisoner {
   completed_expeditions?: IExpedition[];
 }
 
-type ResponseStatus = 'error' | 'success';
+export type ResponseStatus = 'error' | 'success';
