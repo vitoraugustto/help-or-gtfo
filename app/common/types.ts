@@ -37,3 +37,5 @@ export interface IPrisoner {
   xp: number;
   completed_expeditions?: IExpedition[];
 }
+
+type ResponseStatus = 'error' | 'success';
