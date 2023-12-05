@@ -25,11 +25,7 @@ export const fetchExpedition = async (
 export const fetchExpeditionFinishers = async (
   rundownId: IRundown['id'],
   expeditionId: IExpedition['id'],
-): Promise<{
-  status: 'error' | 'success';
-  message: string;
-  payload: IExpedition['finishers'];
-}> => {
+): Promise<IBackendResponse & { payload: IExpedition['finishers'] }> => {
   const res = await fetchApi(
     `/api/v1/rundowns/${rundownId}/expeditions/${expeditionId}/finishers`,
   );
