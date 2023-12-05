@@ -20,11 +20,7 @@ export const fetchPrisoners = async (): Promise<{
 
 export const fetchPrisoner = async (
   id: IPrisoner['id'],
-): Promise<{
-  status: ResponseStatus;
-  message: string;
-  payload: IPrisoner;
-}> => {
+): Promise<IBackendResponse & { payload: IPrisoner }> => {
   const res = await fetchApi(`/api/v1/prisoners/${id}`);
 
   return await res.json();
