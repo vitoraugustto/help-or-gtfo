@@ -1,11 +1,9 @@
 import { IBackendResponse, IExpedition, IRundown } from '../common/types';
 import { fetchApi } from './fetch';
 
-export const fetchRundowns = async (): Promise<{
-  status: 'error' | 'success';
-  message: string;
-  payload: IRundown[];
-}> => {
+export const fetchRundowns = async (): Promise<
+  IBackendResponse & { payload: IRundown[] }
+> => {
   const res = await fetchApi('/api/v1/rundowns');
 
   return await res.json();
