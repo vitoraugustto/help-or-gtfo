@@ -45,3 +45,8 @@ export interface IPaginationResponse {
   next: string;
   previous: string;
 }
+
+export interface IBackendResponse {
+  status: ResponseStatus;
+  message: string;
+}
