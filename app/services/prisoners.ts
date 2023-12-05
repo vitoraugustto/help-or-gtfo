@@ -1,4 +1,5 @@
 import {
+  IBackendResponse,
   ICompletedExpeditions,
   IExpedition,
   IPaginationResponse,
@@ -32,11 +33,7 @@ export const fetchPrisoner = async (
 export const fetchCompletedExpeditions = async (
   id: IPrisoner['id'],
   page: number = 1,
-): Promise<{
-  status: ResponseStatus;
-  message: string;
-  payload: ICompletedExpeditionsResponse;
-}> => {
+): Promise<IBackendResponse & { payload: ICompletedExpeditionsResponse }> => {
   const res = await fetchApi(
     `/api/v1/prisoners/${id}/completed-expeditions?page=${page}`,
   );
