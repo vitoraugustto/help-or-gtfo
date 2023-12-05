@@ -1,4 +1,4 @@
-import { IExpedition, IRundown } from '../common/types';
+import { IBackendResponse, IExpedition, IRundown } from '../common/types';
 import { fetchApi } from './fetch';
 
 export const fetchRundowns = async (): Promise<{
@@ -14,11 +14,7 @@ export const fetchRundowns = async (): Promise<{
 export const fetchExpedition = async (
   rundownId: IRundown['id'],
   expeditionId: IExpedition['id'],
-): Promise<{
-  status: 'error' | 'success';
-  message: string;
-  payload: IExpedition;
-}> => {
+): Promise<IBackendResponse & { payload: IExpedition }> => {
   const res = await fetchApi(
     `/api/v1/rundowns/${rundownId}/expeditions/${expeditionId}`,
   );
