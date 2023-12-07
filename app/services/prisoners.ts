@@ -39,5 +39,3 @@ interface ICompletedExpeditionsResponse extends IPaginationResponse {
   results: ICompletedExpeditions[];
 }
 
-interface IBackendPromise<T>
-  extends Promise<IBackendResponse & { payload: T }> {}
