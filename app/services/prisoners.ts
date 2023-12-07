@@ -9,7 +9,7 @@ import {
 import { fetchApi } from './fetch';
 
 export const fetchPrisoners = async (): Promise<
-  IBackendResponse & { payload: IPrisoner[] }
+  IBackendResponse<IPrisoner[]>
 > => {
   const res = await fetchApi('/api/v1/prisoners?order_by=xp&sort_order=desc');
 
@@ -18,7 +18,7 @@ export const fetchPrisoners = async (): Promise<
 
 export const fetchPrisoner = async (
   id: IPrisoner['id'],
-): Promise<IBackendResponse & { payload: IPrisoner }> => {
+): Promise<IBackendResponse<IPrisoner>> => {
   const res = await fetchApi(`/api/v1/prisoners/${id}`);
 
   return await res.json();
@@ -27,7 +27,7 @@ export const fetchPrisoner = async (
 export const fetchCompletedExpeditions = async (
   id: IPrisoner['id'],
   page: number = 1,
-): Promise<IBackendResponse & { payload: ICompletedExpeditionsResponse }> => {
+): Promise<IBackendResponse<ICompletedExpeditionsResponse>> => {
   const res = await fetchApi(
     `/api/v1/prisoners/${id}/completed-expeditions?page=${page}`,
   );
@@ -38,4 +38,3 @@ export const fetchCompletedExpeditions = async (
 interface ICompletedExpeditionsResponse extends IPaginationResponse {
   results: ICompletedExpeditions[];
 }
-
