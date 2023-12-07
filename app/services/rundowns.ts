@@ -2,7 +2,7 @@ import { IBackendResponse, IExpedition, IRundown } from '../common/types';
 import { fetchApi } from './fetch';
 
 export const fetchRundowns = async (): Promise<
-  IBackendResponse & { payload: IRundown[] }
+  IBackendResponse<IRundown[]>
 > => {
   const res = await fetchApi('/api/v1/rundowns');
 
@@ -12,7 +12,7 @@ export const fetchRundowns = async (): Promise<
 export const fetchExpedition = async (
   rundownId: IRundown['id'],
   expeditionId: IExpedition['id'],
-): Promise<IBackendResponse & { payload: IExpedition }> => {
+): Promise<IBackendResponse<IExpedition>> => {
   const res = await fetchApi(
     `/api/v1/rundowns/${rundownId}/expeditions/${expeditionId}`,
   );
@@ -23,7 +23,7 @@ export const fetchExpedition = async (
 export const fetchExpeditionFinishers = async (
   rundownId: IRundown['id'],
   expeditionId: IExpedition['id'],
-): Promise<IBackendResponse & { payload: IExpedition['finishers'] }> => {
+): Promise<IBackendResponse<IExpedition['finishers']>> => {
   const res = await fetchApi(
     `/api/v1/rundowns/${rundownId}/expeditions/${expeditionId}/finishers`,
   );
