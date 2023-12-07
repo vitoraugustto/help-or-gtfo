@@ -40,10 +40,11 @@ export interface IPrisoner {
 
 export type ResponseStatus = 'error' | 'success';
 
-export interface IPaginationResponse {
+export interface IPaginationResponse<T> {
   count: number;
   next: string;
   previous: string;
+  results: T;
 }
 
 export interface IBackendResponse<T> {
