@@ -35,5 +35,6 @@ export const fetchCompletedExpeditions = async (
   return await res.json();
 };
 
-type PaginationCompletedExpeditions =
-  IPaginationResponse<ICompletedExpeditions>;
+type PaginationCompletedExpeditions = IPaginationResponse<
+  ICompletedExpeditions[]
+>;
