@@ -27,10 +27,13 @@ export const fetchPrisoner = async (
 export const fetchCompletedExpeditions = async (
   id: IPrisoner['id'],
   page: number = 1,
-): Promise<IBackendResponse<IPaginationResponse<ICompletedExpeditions>>> => {
+): Promise<IBackendResponse<PaginationCompletedExpeditions>> => {
   const res = await fetchApi(
     `/api/v1/prisoners/${id}/completed-expeditions?page=${page}`,
   );
 
   return await res.json();
 };
+
+type PaginationCompletedExpeditions =
+  IPaginationResponse<ICompletedExpeditions>;
