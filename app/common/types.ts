@@ -46,7 +46,8 @@ export interface IPaginationResponse {
   previous: string;
 }
 
-export interface IBackendResponse {
+export interface IBackendResponse<T> {
   status: ResponseStatus;
   message: string;
+  payload: T;
 }
