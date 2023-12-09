@@ -1,10 +1,8 @@
 import {
   IBackendResponse,
   ICompletedExpeditions,
-  IExpedition,
   IPaginationResponse,
   IPrisoner,
-  ResponseStatus,
 } from '../common/types';
 import { fetchApi } from './fetch';
 
