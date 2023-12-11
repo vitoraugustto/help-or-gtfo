@@ -21,9 +21,20 @@ export default async function PrisonerScreen({
 
   return (
     <div className="flex w-full flex-col items-center justify-center">
-      <p className="text-3xl">{prisoner.username}</p>
-      <p className="text-xl">Level: {prisoner.level}</p>
-      <p className="text-xl">Experiência obtida: {prisoner.xp}</p>
+      <div className="w-[50%] max-sm:w-[90%]">
+        <div className="flex flex-row justify-between ">
+          <p className="text-3xl">{prisoner.username}</p>
+          <div>
+            <p className="text-xl">
+              Level:&nbsp;
+              <span className="text-3xl font-bold text-red-500">
+                {prisoner.level}
+              </span>
+            </p>
+            <p className="text-xl">EXP: {prisoner.xp}</p>
+          </div>
+        </div>
+      </div>
       <CompletedExpeditions prisonerId={prisonerId} />
     </div>
   );
