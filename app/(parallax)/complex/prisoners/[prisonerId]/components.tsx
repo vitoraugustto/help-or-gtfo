@@ -33,7 +33,10 @@ export function CompletedExpeditions({
   return (
     <>
       <p className="text-xl">
-        Expedições concluídas: {completedExpeditions.count}
+        Expedições concluídas:&nbsp;
+        <span className="font-bold text-red-500">
+          {completedExpeditions.count}
+        </span>
       </p>
       <div className="mt-4 flex h-96 w-[50%] flex-col gap-4 overflow-y-auto pr-4 max-sm:w-[90%]">
         {completedExpeditions.results.map((completedExpedition) => (
