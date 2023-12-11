@@ -31,7 +31,12 @@ export default async function PrisonerScreen({
                 {prisoner.level}
               </span>
             </p>
-            <p className="text-xl">EXP: {prisoner.xp}</p>
+            <p className="text-xl">
+              EXP:&nbsp;
+              <span className="text-xl font-bold text-red-500">
+                {prisoner.xp}
+              </span>
+            </p>
           </div>
         </div>
       </div>
