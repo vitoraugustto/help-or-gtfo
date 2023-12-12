@@ -1,3 +1,6 @@
+
+export type Status = 'succeeded' | 'failed' | 'idle' | 'pending';
+
 export interface IRundown {
   title: string;
   id: number;
