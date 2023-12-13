@@ -4,7 +4,11 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
-import { ICompletedExpeditions, IPrisoner } from '@/app/common/types';
+import {
+  ICompletedExpeditions,
+  IPaginationResponse,
+  IPrisoner,
+} from '@/app/common/types';
 import { fetchCompletedExpeditions } from '@/app/services/prisoners';
 
 export function CompletedExpeditions({
@@ -14,10 +18,8 @@ export function CompletedExpeditions({
 }) {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
-  const [completedExpeditions, setCompletedExpeditions] = useState<{
-    count: number;
-    results: ICompletedExpeditions[];
-  }>();
+  const [completedExpeditions, setCompletedExpeditions] =
+    useState<IPaginationResponse<ICompletedExpeditions[]>>();
 
   useEffect(() => {
     async function handleFetchCompletedExpeditions() {
