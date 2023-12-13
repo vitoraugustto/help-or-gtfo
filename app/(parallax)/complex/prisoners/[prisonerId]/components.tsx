@@ -17,7 +17,7 @@ export function CompletedExpeditions({
   const [completedExpeditions, setCompletedExpeditions] = useState<{
     count: number;
     results: ICompletedExpeditions[];
-  }>({ count: 0, results: [] });
+  }>();
 
   useEffect(() => {
     async function handleFetchCompletedExpeditions() {
@@ -35,11 +35,11 @@ export function CompletedExpeditions({
       <p className="text-xl">
         Expedições concluídas:&nbsp;
         <span className="font-bold text-red-500">
-          {completedExpeditions.count}
+          {completedExpeditions?.count}
         </span>
       </p>
       <div className="mt-4 flex h-96 w-[50%] flex-col gap-4 overflow-y-auto pr-4 max-sm:w-[90%]">
-        {completedExpeditions.results.map((completedExpedition) => (
+        {completedExpeditions?.results.map((completedExpedition) => (
           <div
             key={completedExpedition.id}
             className="flex flex-row items-center justify-between border-2 border-slate-800 p-2"
