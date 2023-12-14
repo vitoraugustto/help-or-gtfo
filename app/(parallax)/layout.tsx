@@ -7,7 +7,7 @@ export default function ParallaxLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const parallaxStyle = {
     transform: `translate(-${mousePosition.x / 20}px, -${
