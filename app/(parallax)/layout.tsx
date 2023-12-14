@@ -1,15 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 
 export default function ParallaxLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
 
-  const parallaxStyle = {
+  const parallaxStyle: CSSProperties = {
     transform: `translate(-${mousePosition.x / 20}px, -${
       mousePosition.y / 20
     }px)`,
